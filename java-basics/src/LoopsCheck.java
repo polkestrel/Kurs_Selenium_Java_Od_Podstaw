@@ -23,6 +23,7 @@ public class LoopsCheck {
              int temp = tablica[i];
              tablica[i] = tablica[tablica.length-1-i];
              tablica[tablica.length-1-i] = temp;
+             System.out.println("Iteracja numer: " + i);
          }
          for (int i =0; i < tablica.length;i++) {
              System.out.println(tablica[i]);
