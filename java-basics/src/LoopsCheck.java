@@ -17,5 +17,13 @@ public class LoopsCheck {
         for (int i = (tablica.length - 1); i>=0; i--) {
             System.out.println(tablica[i]);
         }
+
+        // odwrócenie tablicy
+         for (int i=0; i<(tablica.length/2);i++) {
+             int temp = tablica[i];
+             tablica[i] = tablica[tablica.length-1-i];
+             tablica[tablica.length-1-i] = temp;
+             System.out.println(tablica[i]);
+         }
     }
 }
