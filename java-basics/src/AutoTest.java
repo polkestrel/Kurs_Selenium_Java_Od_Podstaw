@@ -2,30 +2,28 @@ public class AutoTest {
 
     public static void main(String[] args) {
 
-        Auto mercedes = new Auto();
-        mercedes.marka = "Mercedes";
-        mercedes.model = "Klasa S";
-        mercedes.rok = 2021;
-        mercedes.przebieg = 1000;
+        Auto mercedes = new Auto("Mercedes", "Klasa S",2021,1000);
+        System.out.println(mercedes.marka);
+        System.out.println(mercedes.model);
+        System.out.println(mercedes.rok);
+        System.out.println(mercedes.przebieg);
 
         mercedes.jedz();
         mercedes.hamuj();
         mercedes.info();
 
-        Auto audi = new Auto();
-        audi.marka = "Audi";
-        audi.model = "A5";
-        audi.rok = 2020;
-        audi.przebieg = 0;
+
+
+        Auto audi = new Auto("Audi","A5",2020,0);
+        System.out.println(audi.marka);
+        System.out.println(audi.model);
+        System.out.println(audi.rok);
+        System.out.println(audi.przebieg);
 
         audi.hamuj();
         audi.jedz();
         audi.info();
 
-        Auto noName = new Auto();
 
-        noName.jedz();
-        noName.hamuj();
-        noName.info();
     }
 }
