@@ -2,6 +2,9 @@ public class StudentChecker {
 
     public static void main(String[] args) {
 
+        String uczelnia = Student.nazwaUczelni;
+        Student.infoUczelnia();
+
         Student firstStudent = new Student();
         Student secondStudent = new Student();
         Student thirdStudent = new Student();
@@ -11,6 +14,7 @@ public class StudentChecker {
         firstStudent.nick = "abraka";
         firstStudent.nazwisko = "Zwis";
         firstStudent.imie = "Major";
+        firstStudent.infoUczelnia();
 
         secondStudent.email = "abfr@hg.de";
         secondStudent.numerIndeksu = 1258;
