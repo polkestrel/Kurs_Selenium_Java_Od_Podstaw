@@ -1,3 +1,4 @@
 *.class
 *checkstyle-idea.xml
 *sonarlint.xml
+*/sonarlint
