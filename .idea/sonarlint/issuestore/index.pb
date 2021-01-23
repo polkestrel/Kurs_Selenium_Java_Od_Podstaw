@@ -78,3 +78,11 @@ V
 &java-basics/src/files/WriteToFile.java,3\b\3b18de467ea6952a70c095f7c29fca5ded06b158
 U
 %java-basics/src/files/DeleteFile.java,e\9\e9e1b5df8b7f14b989e720e19918687993596109
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+C
+Selenium-course.iml,f\2\f2f8310f4088f7963d2bffc986d2fd0f79812802
+T
+$java-basics/src/listy/ListyTest.java,e\7\e79113e1ae8b3ce002c723a83138cb10f5c195e3
+R
+"java-basics/src/sety/SetyTest.java,d\9\d9fa36b645e667f0f2ccea7e191278ba604f5ef0
