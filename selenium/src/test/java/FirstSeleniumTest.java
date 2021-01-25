@@ -1,4 +1,5 @@
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,6 +13,9 @@ public class FirstSeleniumTest {
         Dimension dimension = new Dimension(1900,800);
         WebDriver driver = new ChromeDriver();
         driver.manage().window().setSize(dimension);
-        driver.get("https://www.google.com");
+        driver.get("C:\\SelfLearning\\Udemy\\Kurs Selenium od podstaw\\docs\\Test.html");
+        driver.findElement(By.id("newPage")).click();
+        driver.quit(); // zamuka wszystkie okna
+        //driver.close(); // zamyka pierwotne okno
     }
 }
