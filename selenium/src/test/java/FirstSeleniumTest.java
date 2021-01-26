@@ -43,5 +43,8 @@ public class FirstSeleniumTest {
         } else {
             System.out.println("Linki nie istnieją");
         }
+
+        WebElement clickOnMe = driver.findElement(By.cssSelector("#clickOnMe"));
+        WebElement clckOnMeXpath = driver.findElement(By.xpath("//*[@id='clickOnMe']"));
     }
 }
