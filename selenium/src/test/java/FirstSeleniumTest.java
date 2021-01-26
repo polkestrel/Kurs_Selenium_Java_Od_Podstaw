@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
+
 public class FirstSeleniumTest {
 
     @Test
@@ -27,5 +29,19 @@ public class FirstSeleniumTest {
         WebElement topSecretCss = driver.findElement(By.cssSelector(".topSecret"));
         WebElement tdFirstChild = driver.findElement(By.cssSelector("td:first-child"));
 
+        WebElement clickOnMeXpathButton = driver.findElement(By.xpath("/html/body/button"));
+        WebElement clickOnMeXpathButton2 = driver.findElement(By.xpath("//button"));
+        WebElement linksXpath = driver.findElement(By.xpath("//a"));
+        WebElement topSecretXpath = driver.findElement(By.xpath("//p[@class='topSecret']"));
+        //WebElement topSecretXpath2 = driver.findElement(By.xpath("//[@class='topSecret']"));
+        WebElement linkText = driver.findElement(By.xpath("//a[text()='Visit W3Schools.com!']"));
+
+
+        List<WebElement> links2 = driver.findElements(By.tagName("a"));
+        if (links2.size()>0) {
+            System.out.println("Linki istnieją");
+        } else {
+            System.out.println("Linki nie istnieją");
+        }
     }
 }
