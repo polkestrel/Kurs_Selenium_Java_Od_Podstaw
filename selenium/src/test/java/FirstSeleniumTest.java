@@ -25,6 +25,7 @@ public class FirstSeleniumTest {
         WebElement firstLink = driver.findElement(By.tagName("a"));
 
         WebElement clickOnMeButton = driver.findElement(By.cssSelector("#clickOnMe"));
+        //clickOnMeButton.click();
         WebElement links = driver.findElement(By.cssSelector("a"));
         WebElement topSecretCss = driver.findElement(By.cssSelector(".topSecret"));
         WebElement tdFirstChild = driver.findElement(By.cssSelector("td:first-child"));
@@ -46,5 +47,7 @@ public class FirstSeleniumTest {
 
         WebElement clickOnMe = driver.findElement(By.cssSelector("#clickOnMe"));
         WebElement clckOnMeXpath = driver.findElement(By.xpath("//*[@id='clickOnMe']"));
+
+
     }
 }
