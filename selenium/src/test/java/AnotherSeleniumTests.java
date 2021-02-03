@@ -34,7 +34,6 @@ public class AnotherSeleniumTests {
         checkBox.click();
         Thread.sleep(1500);
         checkBox.click();
-
         WebElement radioButton = driver.findElement(By.xpath("//input[@value='male']"));
         radioButton.click();
     }
