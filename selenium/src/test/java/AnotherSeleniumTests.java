@@ -1,13 +1,22 @@
+import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.Set;
 
 public class AnotherSeleniumTests {
+
+    protected WebDriver driver;
+
+//    @BeforeTest
+//    public void setUp() {
+//        System.out.println("Przed klasą");
+//        String driverPath = "C:\\SelfLearning\\Udemy\\Kurs Selenium od podstaw\\Selenium-course\\selenium\\src\\main\\resources\\executables\\drivers\\chromedriver.exe";
+//        System.setProperty("webdriver.chrome.driver", driverPath);
+//        WebDriver driver = new ChromeDriver();
+//        driver.manage().window().maximize();
+//    }
 
     @Test
     public void pobieranieTekstuZElementu() throws InterruptedException {
@@ -164,7 +173,7 @@ public class AnotherSeleniumTests {
         WebElement newPageButton = driver.findElement(By.id("newPage"));
         String currentWindowName = driver.getWindowHandle();
         newPageButton.click();
-        switchToNewWindow(driver,currentWindowName);
+        switchToNewWindow(driver, currentWindowName);
         System.out.println("Tytuł strony to: " + driver.getTitle());
         System.out.println("Obecny URL to: " + driver.getCurrentUrl());
         driver.switchTo().window(currentWindowName);
@@ -181,4 +190,41 @@ public class AnotherSeleniumTests {
             }
         }
     }
+
+    @Test
+    public void testPrzegladarkiGoogle() throws InterruptedException {
+        System.out.println("Przed klasą");
+        String driverPath = "C:\\SelfLearning\\Udemy\\Kurs Selenium od podstaw\\Selenium-course\\selenium\\src\\main\\resources\\executables\\drivers\\chromedriver.exe";
+        System.setProperty("webdriver.chrome.driver", driverPath);
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://www.google.com/");
+        //przełaczenie sie do okienka z akceptowaniem ciastaeczek i naciśnięcie przycisku
+        driver.switchTo().frame(0);
+        WebElement acceptCookiesButton = driver.findElement(By.xpath("//html/body/div/c-wiz/div/div/div/div/div/div[2]/form/div/span/span"));
+        acceptCookiesButton.click();
+
+        WebElement searchInput = driver.findElement(By.name("q"));
+        searchInput.sendKeys("Selenium");
+        searchInput.sendKeys(Keys.ENTER);
+        WebElement seleniumPageLink = driver.findElement(By.partialLinkText("selenium.dev"));
+        seleniumPageLink.click();
+
+        String expectedTitle = "SeleniumHQ Browser Automation";
+        System.out.println(driver.getTitle());
+
+        Assert.assertEquals(expectedTitle, driver.getTitle());
+        Assert.assertTrue(expectedTitle.equals((driver.getTitle())));
+        Assert.assertTrue("Tytuły nie są równe", driver.getTitle().equals("Zła nazwa"));
+
+        driver.quit();
+
+    }
+
+
+//    @AfterTest
+//    public void tearDown() {
+//        System.out.println("Wykonuje sie po klasie");
+//        driver.quit();
+//    }
 }
